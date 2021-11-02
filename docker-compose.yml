@@ -11,7 +11,7 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
   php:
-    image: yiisoftware/yii2-php:7.4-fpm
+    image: yiisoftware/yii2-php:8.0-fpm
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
