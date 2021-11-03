@@ -6,6 +6,7 @@
         <settings>
           <configurations>
             <local_configuration executable_path="$PROJECT_DIR$/app/vendor/codeception/codeception/codecept" />
+            <configuration_by_sdk interpreter_id="8a5f8b12-4a37-4b41-8225-3bf23a6367d8" executable_path="C:/Users/10022290/Desktop/Projectes/AESProject/AESProject/app/vendor/codeception/codeception/codecept" />
           </configurations>
         </settings>
       </tool>
