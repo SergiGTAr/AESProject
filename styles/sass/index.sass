@@ -1,0 +1,58 @@
+@font-face
+  font-family: "Product Sans"
+  src: local(Fonts\ProductSansRegular)
+
+@font-face
+  font-family: "Isidora"
+  src: local(Fonts\IsidoraLight), local(Fonts\IsidoraBold)
+
+::-webkit-scrollbar
+  width: 8px
+
+::-webkit-scrollbar-track
+  background: #ffffff
+
+::-webkit-scrollbar-thumb
+  background: #008cff
+  border-radius: 4px
+  &:hover
+    background: #0065b7
+body
+  margin: 0
+  overflow-x: hidden
+  .container
+    width: 100vw
+    height: 100vh
+    min-height: 500px
+    display: flex
+    justify-content: center
+    align-items: center
+    .brandContainer,
+    .logContainer
+      margin: 0
+      width: 50%
+      height: 100%
+
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      *
+        border-radius: 10px
+        margin: 10px
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+    .brandContainer
+      font-family: Isidora
+      font-size: 3rem
+      text-align: center
+      *
+        margin: 0
+      h1
+        font-weight: 100
+      p
+        font-weight: 900
+    .logContainer
+      background-color: #008cff
