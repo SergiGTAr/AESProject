@@ -26,6 +26,17 @@ services:
     depends_on:
       - app
 
+  node:
+    build:
+      context: .
+      dockerfile: dockerfile_NodeJS
+    image: nodejs:latest
+    container_name: nodejs
+    restart: unless-stopped
+    volumes:
+      - ./:/var/
+
+
 
 #version: '2'
 #services:
