@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>AES Project</title>
 
-        <link href="styles/css/provaindex.css" rel="stylesheet" type="text/css">
+        <link href="styles/css/index.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <main class="container">
