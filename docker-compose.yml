@@ -30,7 +30,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile_NodeJS
-    image: nodejs:latest
+    image: node:latest
     container_name: nodejs
     restart: unless-stopped
     volumes:
