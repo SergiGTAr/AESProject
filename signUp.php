@@ -13,7 +13,7 @@
   $dsn ='mysql:dbname=AES_PROJECT_DB;host=127.0.0.1';
   $username ='root';
   $password ='1234';
-  $connection = new \yii\db\Connection([
+  $connection = new yii\db\Connection([
       'dsn' => $dsn,
       'username' => $username,
       'password' => $password,
