@@ -9,8 +9,6 @@
  */
 namespace SebastianBergmann\Type;
 
-use function strtolower;
-
 final class SimpleType extends Type
 {
     /**
@@ -41,10 +39,6 @@ final class SimpleType extends Type
             return true;
         }
 
-        if ($this->name === 'bool' && $other->name() === 'false') {
-            return true;
-        }
-
         if ($other instanceof self) {
             return $this->name === $other->name;
         }
@@ -52,9 +46,9 @@ final class SimpleType extends Type
         return false;
     }
 
-    public function name(): string
+    public function getReturnTypeDeclaration(): string
     {
-        return $this->name;
+        return ': ' . ($this->allowsNull ? '?' : '') . $this->name;
     }
 
     public function allowsNull(): bool
@@ -69,7 +63,7 @@ final class SimpleType extends Type
 
     private function normalize(string $name): string
     {
-        $name = strtolower($name);
+        $name = \strtolower($name);
 
         switch ($name) {
             case 'boolean':

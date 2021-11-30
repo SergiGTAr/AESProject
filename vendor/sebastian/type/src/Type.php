@@ -9,22 +9,14 @@
  */
 namespace SebastianBergmann\Type;
 
-use function get_class;
-use function gettype;
-use function strtolower;
-
 abstract class Type
 {
     public static function fromValue($value, bool $allowsNull): self
     {
-        if ($value === false) {
-            return new FalseType;
-        }
-
-        $typeName = gettype($value);
+        $typeName = \gettype($value);
 
         if ($typeName === 'object') {
-            return new ObjectType(TypeName::fromQualifiedName(get_class($value)), $allowsNull);
+            return new ObjectType(TypeName::fromQualifiedName(\get_class($value)), $allowsNull);
         }
 
         $type = self::fromName($typeName, $allowsNull);
@@ -38,12 +30,9 @@ abstract class Type
 
     public static function fromName(string $typeName, bool $allowsNull): self
     {
-        switch (strtolower($typeName)) {
+        switch (\strtolower($typeName)) {
             case 'callable':
                 return new CallableType($allowsNull);
-
-            case 'false':
-                return new FalseType;
 
             case 'iterable':
                 return new IterableType($allowsNull);
@@ -78,24 +67,9 @@ abstract class Type
         }
     }
 
-    public function asString(): string
-    {
-        return ($this->allowsNull() ? '?' : '') . $this->name();
-    }
-
-    /**
-     * @deprecated
-     *
-     * @codeCoverageIgnore
-     */
-    public function getReturnTypeDeclaration(): string
-    {
-        return ': ' . $this->asString();
-    }
-
     abstract public function isAssignable(Type $other): bool;
 
-    abstract public function name(): string;
+    abstract public function getReturnTypeDeclaration(): string;
 
     abstract public function allowsNull(): bool;
 }
