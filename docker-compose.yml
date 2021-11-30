@@ -3,8 +3,8 @@ version: '3.8'
 services:
   app:
     build:
-      context: ../../..
-      dockerfile: dockerfile
+      context: .
+      dockerfile: Dockerfile
     image: aesprojectapp
     container_name: app
     restart: unless-stopped
@@ -13,7 +13,7 @@ services:
 
   webserver:
     build:
-      context: ../../..
+      context: .
       dockerfile: dockerfile_Nginx
     image: nginx:latest
     container_name: webserver
@@ -28,7 +28,7 @@ services:
 
   node:
     build:
-      context: ../../..
+      context: .
       dockerfile: dockerfile_NodeJS
     image: node:latest
     container_name: nodejs
