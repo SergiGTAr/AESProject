@@ -9,17 +9,17 @@
       <title>Document</title>
   </head>
   <body>
-  <?php
-  $dsn ='mysql:dbname=AES_PROJECT_DB;host=127.0.0.1';
-  $username ='root';
-  $password ='1234';
-  $connection = new yii\db\Connection([
-      'dsn' => $dsn,
-      'username' => $username,
-      'password' => $password,
-      ]);
-      $connection->open();
-      ?>
+<!--  --><?php
+//  $dsn ='mysql:dbname=AES_PROJECT_DB;host=127.0.0.1';
+//  $username ='root';
+//  $password ='1234';
+//  $connection = new yii\db\Connection([
+//      'dsn' => $dsn,
+//      'username' => $username,
+//      'password' => $password,
+//      ]);
+//      $connection->open();
+//      ?>
       <main class="container">
           <form class="singUp" action="">
               <div class="signUpGroup names">
