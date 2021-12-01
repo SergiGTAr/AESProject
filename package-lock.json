@@ -1,9 +1,0 @@
-{
-  "name": "aesproject",
-  "version": "1.0.0",
-  "dependencies": {
-  },
-  "scripts": {
-    "start": "node SCRIPT.js"
-  }
-}
